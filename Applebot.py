@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import random
+import os
 from discord.ext import commands
 
 client = discord.Client()
@@ -71,5 +72,5 @@ async def on_message(message):
     if message.content.startswith('!친구들아!'):
         await client.send_message(message.channel, '이제부터 한 말은 실친이 친겁니다 : 애쁘리바보')
 
-
-client.run('NTMxMzExNTQ2MzQxNzg1NjAx.DxMHoQ.dGnayMvO_t2XdVj9WOxEev9WTM0')
+access_token = os.environ["BOT TOKEN"]
+client.run(access_token)
